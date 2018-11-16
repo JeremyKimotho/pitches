@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_uploads import UploadSet, configure_uploads
+from flask_uploads import UploadSet
 from flask_mail import Mail
 from flask_simplemde import SimpleMDE
 
@@ -35,8 +35,6 @@ def create_app(config_name):
 
   from .auth import auth as auth_blueprint
   app.register_blueprint(auth_blueprint, url_prefix = '/authenticate')
-
-  configure_uploads(app)
 
   simple.init_app(app)
 

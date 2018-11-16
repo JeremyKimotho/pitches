@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jeremykimotho:65x2C-AFKwcvkdke@localhost/watchlist'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jeremykimotho:KANSLA@localhost/jitches'
     SIMPLEMDE_JS_IIFE = True
     SIMPLEMDE_USE_CDN = True
 
@@ -19,7 +19,7 @@ class Config:
         pass
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+pyscopg2://jeremykimotho:65x2C-AFKwcvkdke@localhost/watchlist_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+pyscopg2://jeremykimotho:KANSLA@localhost/jitches_test'
 
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')

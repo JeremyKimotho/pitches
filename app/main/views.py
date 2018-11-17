@@ -6,7 +6,7 @@ from .. import db
 import markdown2
 from datetime import datetime
 from ..pitches import save_pitch
-from . import PitchForm
+from .forms import PitchForm
 
 @main.route('/')
 @login_required
@@ -35,21 +35,15 @@ def profile(uname):
 
   return render_template('profile/profile.html', user=user)
 
-@main.route('/writing-pitch')
+@main.route('/writing-pitch', methods=['GET', 'POST'])
+@login_required
 def write_pitch():
   form = PitchForm()
-
   if form.validate_on_submit():
-    id=7
-    title=form.title.data
-    body=form.body.data
-    author=form.body.author
-    posted_at=datetime.now()
-    upvotes=0
-    downvotes=0
-    category=form.category.data
-    new_pitch=Pitch(id, title, author, posted_at, body, upvotes, downvotes, category)
-    new_pitches.save_pitch(new_pitch)
+    new_pitch=Pitch(id=7, title=form.title.data, author=form.author.data, posted_at=datetime.now(), body=form.body.data, upvotes=0, downvotes=0, category=form.category.data)
+    save_pitch(new_pitch)
+    flash('Your pitch has been published.')
+    return redirect(url_for('main.index'))
   
-  title='New Pitch'
-  return render_template('index.html')
+  title='New Jitch'
+  return render_template('new_pitch.html', pitch = form, title = title)

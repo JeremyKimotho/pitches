@@ -3,11 +3,11 @@ from wtforms import StringField, TextAreaField, SubmitField, IntegerField, Selec
 from wtforms.validators import Required
 
 class PitchForm(FlaskForm):
-  title=StringField('Pitch Title', validators=[Required()])
+  title=StringField('Pitch Title')
   body=TextAreaField('Project Pitch')
   author=TextAreaField('Your name as it\'ll be displayed')
   rtime=IntegerField('Expected read time')
-  category=SelectField('Category', choices=[('Business'), ('Technology'), ('Business'), ('Misc.')])
+  category=SelectField('Category', choices=[('Business'), ('Technology'), ('Sports'), ('Misc.')])
   submit=SubmitField('Submit')
 
 class UpdateProfile(FlaskForm):

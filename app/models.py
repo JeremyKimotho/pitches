@@ -70,7 +70,7 @@ class Pitch:
   '''
   For the pitch class
   '''
-  def __init__(self, id, title, author, posted_at, body, upvotes, downvotes):
+  def __init__(self, id, title, author, posted_at, body, upvotes, downvotes, category):
     self.id = id
     self.title = title
     self.body = body
@@ -79,3 +79,4 @@ class Pitch:
     self.body = body
     self.upvotes = upvotes
     self.downvotes = downvotes
+    self.category = category

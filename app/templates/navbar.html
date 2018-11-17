@@ -21,6 +21,7 @@
         </ul>
         <ul class='nav navbar-nav navbar-right'>
           {% if current_user.is_authenticated %}
+          <li><a class='ratings' href='/writing-pitch'>Write a new pitch</a></li>
           <li style='color:white;padding:15px;'>{{current_user.username}}</li>
           <li><a href="{{url_for('auth.logout')}}">Sign Out</a></li>
           {% endif %}

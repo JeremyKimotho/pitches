@@ -73,7 +73,7 @@ class Pitch:
   def __init__(self, id, title, author, posted_at, body, upvotes, downvotes):
     self.id = id
     self.title = title
-    self.overview = overview
+    self.body = body
     self.author = author
     self.posted_at = posted_at
     self.body = body

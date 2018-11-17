@@ -76,7 +76,6 @@ class Pitch:
     self.body = body
     self.author = author
     self.posted_at = posted_at
-    self.body = body
     self.upvotes = upvotes
     self.downvotes = downvotes
     self.category = category

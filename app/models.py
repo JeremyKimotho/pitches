@@ -66,3 +66,17 @@ class Comments(db.Model):
   def get_comments(cls, id):
     comments = Comments.query.filter_by(pitch_id=id).all()
     return comments
+
+class Pitch:
+  '''
+  For the pitch class
+  '''
+  def __init__(self, id, title, author, posted_at, body, upvotes, downvotes):
+    self.id = id
+    self.title = title
+    self.overview = overview
+    self.author = author
+    self.posted_at = posted_at
+    self.body = body
+    self.upvotes = upvotes
+    self.downvotes = downvotes

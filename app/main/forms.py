@@ -12,3 +12,7 @@ class PitchForm(FlaskForm):
 class UpdateProfile(FlaskForm):
   add_info=StringField('Your LinkedIn Profile')
   submit=SubmitField('Submit')
+
+class CommentForm(FlaskForm):
+  comment=StringField('Your comment:')
+  submit=SubmitField('Post')

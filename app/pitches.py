@@ -2,8 +2,5 @@ from .models import Pitch
 
 pitch=Pitch
 
-def save_pitch(pitch):
-  pitches=[]
-  pitches.append(pitch)
+def get_pitch(id):
   
-  return pitches

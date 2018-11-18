@@ -45,7 +45,6 @@ class Comments(db.Model):
   __tablename__='comments'
 
   id = db.Column(db.Integer, primary_key = True)
-  title = db.Column(db.String)
   comment = db.Column(db.String)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
   posted = db.Column(db.DateTime,default=datetime.utcnow)
@@ -77,6 +76,10 @@ class Pitch(db.Model):
   def save_pitch(self):
     db.session.add(self)
     db.session.commit()
+
+  def add_upvotes(self):
+    self.upvotes = upvotes+1
+    return self.upvotes
 
   @classmethod
   def get_pitches(cls, id):

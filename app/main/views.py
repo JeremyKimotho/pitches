@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for, abort, flash
 from . import main
-from ..models import User,Pitch, Comments
+from ..models import User, Pitch, Comments
 from flask_login import login_required, current_user
 from .. import db
 import markdown2
@@ -17,8 +17,8 @@ def index():
 
 @main.route('/profile/<uname>/<id>')
 def profile(id, uname):
-  user = User.query.filter_by(username = uname).first()
-  pitches = Pitch.query.filter_by(user_id=id)
+  user = User.query.filter_by(username = uname)
+  pitches = Pitch.query.filter_by(id=id)
   message='You don\'t have any pitches to show you failure!'
   if pitches is not 0:
     message='You\'ve got a few to show'
@@ -51,9 +51,7 @@ def write_comment():
   form = CommentForm()
   if form.validate_on_submit():
     comment = Comments(comment=form.comment.data)
-
-    db.session.add(comment)
-    db.session.commit()
+    comment.save_comment()
 
     return redirect(url_for('main.index'))
 
@@ -97,8 +95,8 @@ def get_misc():
 
 @main.route('/view-comments/<id>')
 def view_comments(id):
-  comments = Comments.query.filter_by(pitch=id)
-  pitch=get_pitch(id)
+  pitch = Pitch.query.filter_by(id=id)
+  comments = Comments.query.filter_by(id=id)
   message='This pathetic pitch has no comments'
   if comments is not 0:
     message=f'You\'re now viewing the comments. Click home to continue browsing pitches'

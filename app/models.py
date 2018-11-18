@@ -84,3 +84,8 @@ class Pitch(db.Model):
   def get_pitches(cls, id):
     pitches = Pitch.query.filter_by(category_id=id).all()
     return pitches
+
+  def get_comments(self):
+    pitch = Pitch.query.filter_by(id = self.id).first()
+    comments = Comments.query.filter_by(pitch=pitch.id)
+    return comments

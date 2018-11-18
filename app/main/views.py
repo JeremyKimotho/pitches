@@ -6,6 +6,7 @@ from .. import db
 import markdown2
 from datetime import datetime
 from .forms import PitchForm, CommentForm
+from ..pitches import get_pitch
 
 @main.route('/')
 @login_required
@@ -94,10 +95,11 @@ def get_misc():
     message='Home of Misc. pitches'
   return render_template('index.html', pitches=pitches, title=title, message=message)
 
-@main.route('/view-comments')
+@main.route('/view-comments/<id>')
 def view_comments(id):
   comments = Comments.query.filter_by(pitch=id)
+  pitch=get_pitch(id)
   message='This pathetic pitch has no comments'
-  if pitches is not 0:
+  if comments is not 0:
     message=f'You\'re now viewing the comments. Click home to continue browsing pitches'
-  return render_template('comments.html', message=message, comments)
+  return render_template('comments.html', message=message, comments=comments, pitch=pitch)

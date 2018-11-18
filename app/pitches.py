@@ -1,6 +1,5 @@
 from .models import Pitch
 
-pitch=Pitch
-
 def get_pitch(id):
-  
+  pitches = Pitch.query.filter_by(id=id)
+  return pitches

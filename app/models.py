@@ -21,7 +21,6 @@ class User(UserMixin, db.Model):
   comments = db.relationship('Comments', backref='comments', lazy='dynamic')
   pitch = db.relationship('Pitch', backref='pitch', lazy='dynamic')
 
-
   @property
   def password(self):
     raise AttributeError('You do not have the permissions to view password attribute')

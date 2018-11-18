@@ -11,3 +11,16 @@
   <div class="col-md-8"></div>
   {% endfor %}
 {% endmacro %}
+
+{% macro displayComments(comments_list) %}
+{% for comment in comments_list %}
+<div class="col-md-8"></div>
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+  <h1>{{comment.comment}}</h1>
+  <h3>by {{comment.user_id}}</h3>
+  <h6><a href='/upvotes'>Posted At: </a>{{comment.Posted}}</h6>
+  <h6><a href='/upvotes'>Written in reference to pitch: </a>{{comment.pitch}}</h6>
+</div>
+<div class="col-md-8"></div>
+{% endfor %}
+{% endmacro %}

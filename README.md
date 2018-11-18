@@ -19,7 +19,6 @@ This is an application where a user can post, view, upvote, downvote and comment
 | Submit a pitch | True |
 | Comment on a pitch | True |
 | View different categories | Tralse |
-
 ## Known Bugs
 There are no known bugs
 ## Technologies Used

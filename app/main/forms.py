@@ -6,8 +6,7 @@ class PitchForm(FlaskForm):
   title=StringField('Pitch Title')
   body=TextAreaField('Project Pitch')
   author=TextAreaField('Your name as it\'ll be displayed')
-  rtime=IntegerField('Expected read time')
-  category=SelectField('Category', choices=[('Business'), ('Technology'), ('Sports'), ('Misc.')])
+  category=SelectField('Category', choices=[('bus', 'Business'), ('tech', 'Technology'), ('spr', 'Sports'), ('misc', 'Misc.')])
   submit=SubmitField('Submit')
 
 class UpdateProfile(FlaskForm):

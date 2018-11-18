@@ -12,13 +12,12 @@ This is an application where a user can post, view, upvote, downvote and comment
 | --- | --- |
 | See other peoples pitches | True |
 | Upvote or Downvote | Tralse |
-| Upvote or Downvote | Tralse |
 | Login or create account | True |
 | Receive a welcoming email | True |
-| View my own pitches on profile page | Tralse |
+| View my own pitches on profile page | True |
 | Submit a pitch | True |
 | Comment on a pitch | True |
-| View different categories | Tralse |
+| View different categories | True |
 ## Known Bugs
 There are no known bugs
 ## Technologies Used

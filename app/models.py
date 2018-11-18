@@ -18,8 +18,8 @@ class User(UserMixin, db.Model):
   surname = db.Column(db.String(255))
   pass_secure = db.Column(db.String(255))
   
-  comments = db.relationship('Comments', backref='role', lazy='dynamic')
-  pitch = db.relationship('Pitch', backref='role', lazy='dynamic')
+  comments = db.relationship('Comments', backref='comments', lazy='dynamic')
+  pitch = db.relationship('Pitch', backref='pitch', lazy='dynamic')
 
 
   @property
@@ -72,7 +72,7 @@ class Pitch(db.Model):
   category = db.Column(db.String)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-  comments = db.relationship('Comments', backref='role', lazy='dynamic')
+  comments = db.relationship('Comments', backref='comments1', lazy='dynamic')
 
   def save_pitch(self):
     db.session.add(self)

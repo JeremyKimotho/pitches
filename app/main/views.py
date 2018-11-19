@@ -31,7 +31,7 @@ def profile(id, uname):
 def write_pitch():
   form = PitchForm()
   if form.validate_on_submit():
-    pitch = Pitch(title=form.title.data, body=form.body.data,upvotes=0, downvotes=0, category=form.category.data)
+    pitch = Pitch(title=form.title.data, body=form.body.data, category=form.category.data)
 
     db.session.add(pitch)
     db.session.commit()
@@ -39,11 +39,6 @@ def write_pitch():
 
   title = 'New Pitch'
   return render_template('new_pitch.html', pitch=form, title=title)
-
-@main.route('/upvotes', methods=['GET', 'POST'])
-def upvoting(id):
-  pitch = Pitch.query.get(id)
-  return pitch.add_upvotes()
 
 @main.route('/comment', methods=['GET', 'POST'])
 @login_required

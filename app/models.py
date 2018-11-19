@@ -64,8 +64,6 @@ class Pitch(db.Model):
   id = db.Column(db.Integer, primary_key = True)
   title = db.Column(db.String(255))
   body = db.Column(db.String)
-  upvotes = db.Column(db.Integer)
-  downvotes = db.Column(db.Integer)
   posted = db.Column(db.DateTime,default=datetime.utcnow)
   category = db.Column(db.String)
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))

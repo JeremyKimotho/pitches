@@ -6,7 +6,7 @@ class PitchTest(unittest.TestCase):
 
   def setUp(self):
     
-    self.new_pitch = Pitch(1234, 'test', 'test', 'test', 'test', datetime.now(), 0, 0)
+    self.new_pitch = Pitch(1234, 'test', 1, datetime.now(), 'test')
 
   def test_instance(self):
     self.assertTrue(isinstance(self.new_pitch, Pitch))

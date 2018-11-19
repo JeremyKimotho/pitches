@@ -101,3 +101,8 @@ def view_comments(id):
   if comments is not 0:
     message=f'You\'re now viewing the comments. Click home to continue browsing pitches'
   return render_template('comments.html', message=message, comments=comments, pitch=pitch)
+
+@main.route('/delete/<id>')
+def pitch_delete(id):
+  pitch = Pitch.query.filter_by(id=id)
+  return pitch.delete_pitch()

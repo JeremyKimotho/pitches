@@ -1,7 +1,8 @@
 .container{
   background-color: #F8F9F9;
   border-radius:10px;
-  border:1.5px red solid 
+  border:1.5px red solid ;
+  margin-bottom:40px;
 }
 h1{
   text-align:center;

@@ -22,6 +22,8 @@ This is an application where a user can post, view, upvote, downvote and comment
 There are no known bugs
 ## Technologies Used
 This app is built using flask and python
+## Live Link 
+https://jitches.herokuapp.com/
 ## License
 MIT License
 

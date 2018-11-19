@@ -76,10 +76,6 @@ class Pitch(db.Model):
     db.session.add(self)
     db.session.commit()
 
-  def add_upvotes(self):
-    self.upvotes = upvotes+1
-    return self.upvotes
-
   @classmethod
   def get_pitches(cls, id):
     pitches = Pitch.query.filter_by(category_id=id).all()

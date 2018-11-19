@@ -4,8 +4,8 @@
     <div class="col-xs-12 col-sm-4 col-md-12 col-lg-2">
       <h1>{{pitch.title}}</h1>
       <h3>{{pitch.body}}</h3>
-      <h6><a href='/upvotes'>Upvotes: </a>{{pitch.upvotes}}</h6>
-      <h6><a href='/upvotes'>Downvotes: </a>{{pitch.downvotes}}</h6>
+      <h6><a href='#'>Upvotes: </a>{{pitch.upvotes}}</h6>
+      <h6><a href='#'>Downvotes: </a>{{pitch.downvotes}}</h6>
       <h6><a href='/comment'>Write a comment</a></h6>
       <h6><a href="/view-comments/{{pitch.id}}">Read comments</a></h6>
     </div>
@@ -17,10 +17,11 @@
 {% for comment in comments_list %}
 <div class="container">
   <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
-    <h1>{{comment.comment}}</h1>
-    <h3>by {{comment.user_id}}</h3>
-    <h6><a href='/upvotes'>Posted At: </a>{{comment.Posted}}</h6>
-    <h6><a href='/upvotes'>Written in reference to pitch: </a>{{comment.pitch}}</h6>
+    <ul>
+      <li><h1>{{comment.comment}}</h1></li>
+    </ul>
+    <h6>Posted At: {{comment.posted}}</h6>
+    <!-- <h6>Written in reference to pitch: {{comment.pitch}}</h6> -->
   </div>
 </div>
 {% endfor %}
